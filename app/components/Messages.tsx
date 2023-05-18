@@ -11,13 +11,13 @@ import { Message, SystemMessage } from './Message';
 
 const SYSTEM_MESSAGE = (
   <>
-    本页面会将数据发送给 OpenAI
+    由GPT-3.5套壳制作
     <br />
-    请注意隐私风险，禁止发送违法内容
+    属于nk特色，请勿外传
   </>
 );
-const WELCOME_MESSAGE = '你好！有什么我可以帮助你的吗？';
-const LOADING_MESSAGE = '正在努力思考...';
+const WELCOME_MESSAGE = '这节课，我们答疑，有问必答';
+const LOADING_MESSAGE = '你，加油啊......';
 
 export const Messages = () => {
   let { isLoading, messages, history, historyIndex, startNewChat } = useContext(ChatContext)!;
@@ -42,7 +42,7 @@ export const Messages = () => {
       {isLoading && <Message role={Role.assistant} content={LOADING_MESSAGE} />}
       {messages.length > 1 && (
         <SystemMessage>
-          连续对话会加倍消耗 tokens，
+          有题吗？有题可以
           <a className="text-gray-link" onClick={startNewChat}>
             开启新对话
           </a>
